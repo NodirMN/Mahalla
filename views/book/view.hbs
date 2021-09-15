@@ -1,0 +1,98 @@
+<div class="book__view">
+            <div class="book__title">Oilaviy ahvoli:</div>
+            <div class="book__value">{{book.genreId.name}}</div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2">
+            <img src="{{book.img}}" alt="{{book.name}}">
+            
+        </div>
+        
+        <div class="col-lg-8 col-md-8">
+            <div class="d-flex">
+                <a class="btn btn-info mb-4" href="/book/edit/{{book._id}}">
+                    <i class="fas fa-pen mr-2"></i>
+                    Tahrirlash
+                </a>
+                <form action="/book/del/" method="post" onSubmit="return confirm('Aniqmi?');" class="ml-3">
+                    <input type="hidden" name="_csrf" value="{{csrf}}">
+                    <input type="hidden" name="_id" value="{{book._id}}">
+                    <button class="btn btn-danger mb-4 mr-4">
+                        <i class="fas fa-trash mr-2"></i>
+                        O'chirish
+                    </button>
+                </form>
+            </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Ismi</th>
+                        <th>Tug'ilgan kuni:</th>
+                        <th>Uyda nechi kishi yashidi</th>
+                        <th>Uylaganmi</th>
+                        <th>Farzandalar soni</th>
+                        <th>Ish joyi haqida ma'lumot:</th>
+                        <th>Adress:</th>
+                        <th>Telefon raqami:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{book.name}}</td>
+                        <td>{{book.year}}</td>
+                        <td>{{book.count}}</td>
+                        <td>{{book.mat}}</td>
+                        <td>{{book.counts}}</td>
+                        <td>{{book.work}}</td>
+                        <td>{{book.adress}}</td>
+                        <td>{{book.tel}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+            <h3 class="mt-3 mb-3">Oila azolari haqida ma'lumot:</h3>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Oila azolari FIO <br>
+                Ota-Ona <br> Rafiaqa</th>
+                <th>Tug'ilgan sanasi</th>
+                <th>Oilaviy ahvoli</th>
+                <th>Farzandalar soni</th>
+                <th>Farzandlar haqida ma'lumot</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{book.father}}</td>
+                <td>{{book.yearfat}}</td>
+                <td>{{book.typef}}</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{{book.mather}}</td>
+                <td>{{book.yearmat}}</td>
+                <td>{{book.typef}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>{{book.marrid}}</td>
+                <td>{{book.yearmar}}</td>
+                <td>{{book.typema}}</td>
+                <td>{{book.counts}}</td>
+                <td>{{book.child}}</td>
+            </tr>
+        </tbody>
+    </table>
+<div class="book__text">
+    <h5>Oila haqida qisqacha ma'lumot</h5>
+    {{book.text}}
+</div>
+
+
+<script>
+
+</script>
+

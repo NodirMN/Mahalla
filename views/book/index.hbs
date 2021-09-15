@@ -1,0 +1,32 @@
+
+<div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>IFO</th>
+                <th>Manzil</th>
+                <th>Mahalla nomi</th>
+                <th>Oila azolari soni</th>
+                <th>Oilaviy ahvoli</th>
+                <th></th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {{#each books}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{adress}}</td>
+                <td>{{namem}}</td>
+                <td>{{count}}</td>
+                <td>{{genreId.name}}</td>
+                <td>
+                    <a href="/book/{{_id}}" class="btn btn-success">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+        </table>
+</div>
