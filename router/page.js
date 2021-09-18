@@ -3,6 +3,7 @@ const router = Router()
 const auth = require('../middleware/auth')
 const Book = require('../modeles/book')
 
+
 router.get('/',auth,(req,res)=>{
     res.render('index',{
         title: 'Bosh sahifa',
@@ -19,7 +20,6 @@ router.get('/', async (req, res) => {
         success: req.flash('success')
     })
 })
-
 router.post('/search',auth,async(req,res)=>{
     const {st} = req.body
     const books = await Book.find({name: { $regex: '.*' + st.toLowerCase() + '.*' } }).select('_id name').lean()

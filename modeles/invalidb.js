@@ -1,7 +1,6 @@
 const {Schema,model} = require('mongoose')
-const {stringify} = require('uuid')
 
-const book = new Schema({
+const invalidb = new Schema({
     img: String,
     adress: String,
     year: String,
@@ -16,28 +15,29 @@ const book = new Schema({
     page: String,
     genreId: {
         type: Schema.Types.ObjectId,
-        ref: 'Genre'
+        ref: 'Invalidg'
     },
-    namem:String,
-    work:String,
+    namem: String,
+    work: String,
     counts: String,
     child: String,
+    gurup: String,
     marrid: String,
     type: String,
     yearmar: String,
     father: String,
-    tel:Number,
+    tel: Number,
     typema: String,
-    mat:String,
+    mat: String,
     typef: String,
     yearfat: String,
     mather: String,
     typem: String,
     yearmat: String,
-    yearmar:String,
+    yearmar: String,
     text: String,
-    
+
 
 })
 
-module.exports = model('Book', book)
+module.exports = model('Invalidb', invalidb)

@@ -1,0 +1,167 @@
+<form action="/ironb/" method="post" class="user">
+{{!-- ///////////////////////////// --}}
+<h3 style="color: brown;">Temir daftarga kiritilish sababi?</h3>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="iron" id="chekid">
+    <label class="form-check-label" for="flexCheckDefault">
+        Boquvchisini yo'qotgan
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="iron" id="chekid" checked>
+    <label class="form-check-label" for="flexCheckChecked">
+        Nogironlik gruhi bor
+    </label>
+</div>
+<div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" value="iron" id="chekid">
+    <label class="form-check-label" for="flexCheckDefault">
+        Ishsiz
+    </label>
+</div>
+{{!-- /////////////////////////////////// --}}
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="namem" placeholder="Mahlla nomi"
+                    required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="group" placeholder="Nogironlik guruhi" required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="img" placeholder="Rasm url" required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="adress" placeholder="Manzil" required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="name" placeholder="IFO" required>
+            </div>
+        </div>
+        {{!-- <h7>Tug'ilgan sana:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="date" class="form-control form-control-user" name="year" placeholder="Tug'ilgan sana"
+                    required size="4">
+            </div>
+        </div>
+        {{!-- <h7>Oilada nechi kishi bor:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="number" class="form-control form-control-user" name="count"
+                    placeholder="Oilada nechi kishi bor?" required>
+            </div>
+        </div>
+
+        {{!-- <h7>Oilaviy ahvoli:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="mat" placeholder="Uylanganmi?" required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="work"
+                    placeholder="Ish joyi haqida ma'lumot" required>
+            </div>
+        </div>
+        {{!-- <h7>Farzandlar soni:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="number" class="form-control form-control-user" name="counts" placeholder="Bolalar soni?"
+                    required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="child"
+                    placeholder="Farzandlar haqida qisqacha ma'lumot" required>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="tel" class="form-control form-control-user" name="tel" placeholder="Telefon raqami"
+                    required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="marrid" placeholder="Ayoli ism shrifi"
+                    required>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="typema" placeholder="Oilaviy ahvili"
+                    required>
+            </div>
+        </div>
+        {{!-- <h7>Tug'ilgan sana:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="date" class="form-control form-control-user" name="yearmar" placeholder="Tug'ilgan sana"
+                    required size="4">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="father" placeholder="Otasi ism sharifi"
+                    required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="typef" placeholder="Oilaviy ahvili"
+                    required>
+            </div>
+        </div>
+        {{!-- <h7 class="">Tug'ilgan sana:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="date" class="form-control form-control-user" name="yearfat" placeholder="Tug'ilgan sana"
+                    required size="4">
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="mather" placeholder="Onasi ism sharifi"
+                    required>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="typem" placeholder="Oilaviy ahvili"
+                    required>
+            </div>
+        </div>
+        {{!-- <h7>Tug'ilgan sana:</h7> --}}
+        <div class="col-lg-2">
+            <div class="form-group">
+                <input type="date" class="form-control form-control-user" name="yearmat" placeholder="Tug'ilgan sana"
+                    required size="4">
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="form-group">
+                <textarea name="text" id="" class="form-control form-control-user" rows="10"
+                    placeholder="Oila haqida ma'lumot"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-success me-md-2 mb-3" type="submit">Kiritish</button>
+    </div>
+</form>

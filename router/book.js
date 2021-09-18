@@ -3,6 +3,7 @@ const router = Router()
 const Genre = require('../modeles/genre')
 const Book = require('../modeles/book')
 const auth = require('../middleware/auth')
+
 router.get('/',auth,async(req,res)=>{
     const books = await Book.find().populate('genreId').lean()
     res.render('book/index',{
@@ -26,110 +27,20 @@ router.post('/del',auth,async(req,res)=>{
 })
 
 router.post('/',auth,async(req,res)=>{
-    let {
-        namem,
-        img,
-        adress,
-        name,
-        work,
-        year,
-        count,
-        genreId,
-        counts,
-        child,
-        marrid,
-        typem,
-        tel,
-        typef,
-        typema,
-        yearmar,
-        father,
-        mat,
-        yearfat,
-        mather,
-        yearmat,
-        text,
+    let {namem,img,adress,name,work,year,count,genreId,counts,child,marrid,typem,tel,typef,typema,yearmar,father,mat,yearfat,mather,yearmat,text,
     } = req.body
     name = name.toLowerCase()
-    const book = await new Book({
-        namem,
-        img,
-        adress,
-        name,
-        work,
-        year,
-        count,
-        tel,
-        genreId,
-        counts,
-        child,
-        marrid,
-        yearmar,
-        mat,
-        text,
-        typem,
-        typef,
-        typema,
-        father,
-        yearfat,
-        mather,
-        yearmat,
-        text,
+    const book = await new Book({namem,img,adress,name,work,year,count,tel,genreId,counts,child,marrid,yearmar,mat,text,typem,typef,typema,father,yearfat,mather,yearmat,text,
     })
     await book.save()
     res.redirect('/book/')
 })
 
 router.post('/save',auth,async(req,res)=>{
-    const {
-        namem,
-        img,
-        adress,
-        name,
-        work,
-        year,
-        mat,
-        tel,
-        count,
-        genreId,
-        counts,
-        child,
-        marrid,
-        text,
-        typem,
-        typef,
-        typema,
-        yearmar,
-        father,
-        yearfat,
-        mather,
-        yearmat,
-        _id
+    const {namem,img,adress,name,work,year,mat,tel,count,genreId,counts,child,marrid,text,typem,typef,typema,yearmar,father,yearfat,mather,yearmat,_id
     } = req.body
 
-    const book = {
-        namem,
-        img,
-        adress,
-        name,
-        year,
-        count,
-        genreId,
-        tel,
-        counts,
-        child,
-        marrid,
-        text,
-        typem,
-        typef,
-        typema,
-        yearmar,
-        father,
-        yearfat,
-        mather,
-        work,
-        yearmat,
-        text,
+    const book = {namem,img,adress,name,year,count,genreId,tel,counts,child,marrid,text,typem,typef,typema,yearmar,father,yearfat,mather,work,yearmat,text,
     }
     await Book.findByIdAndUpdate({_id},book)
     res.redirect('/book/'+_id)

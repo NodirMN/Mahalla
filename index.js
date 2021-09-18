@@ -11,6 +11,13 @@ const usersRouter = require('./router/users')
 const authRouter  = require('./router/auth')
 const bookRouter  = require('./router/book')
 const genreRouter = require('./router/genre')
+const invalidbRouter  = require('./router/invalidb')
+const invalidgRouter = require('./router/invalidg')
+const ironbRouter  = require('./router/ironb')
+const irongRouter = require('./router/irong')
+
+
+
 
 const varMid = require('./middleware/var')
 const app = express()
@@ -43,6 +50,13 @@ app.use('/users',usersRouter)
 app.use('/auth',authRouter) 
 app.use('/book',bookRouter) 
 app.use('/genre',genreRouter) 
+app.use('/invalidb',invalidbRouter) 
+app.use('/invalidg',invalidgRouter) 
+app.use('/ironb',ironbRouter) 
+app.use('/irong',irongRouter) 
+
+
+
 
 async function dev(){
     try {
