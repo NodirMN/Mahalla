@@ -6,6 +6,8 @@ const user = new Schema({
         type: String,
         required: true,
     },
+    resetToken: String,
+    resetTokenExp: Date,
     email: { 
         type: String, 
         required: true 
@@ -14,9 +16,6 @@ const user = new Schema({
         type: Array, 
         default: [] 
     },
-    avatar: { 
-        type: String,
-        default: '' 
-    }
+    img: String,
 })
 module.exports = model('User',user)

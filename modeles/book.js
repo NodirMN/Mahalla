@@ -1,8 +1,7 @@
 const {Schema,model} = require('mongoose')
-const {stringify} = require('uuid')
 
 const book = new Schema({
-    img: String,
+    img:String,
     adress: String,
     year: String,
     name: {

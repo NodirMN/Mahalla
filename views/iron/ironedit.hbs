@@ -1,148 +1,150 @@
-<form action="/ironb/" method="post" class="user">
-    {{!-- ///////////////////////////// --}}
+<form action="/ironb/save" method="post" class="user" enctype="multipart/form-data">
+<input type="hidden" name="_id" value="{{ironb._id}}">
     <h3 style="color: brown;">Temir daftarga kiritilish sababi?</h3>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="iron" id="chekid">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="input" name="iron" type="checkbox" value="{{ironb.iron}}">
+        <label class="label">
             Boquvchisini yo'qotgan
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="iron" id="chekid" checked>
-        <label class="form-check-label" for="flexCheckChecked">
+        <input class="input" name="iron" type="checkbox" value="{{ironb.iron}}" checked>
+        <label class="label">
             Nogironlik gruhi bor
         </label>
     </div>
     <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" value="iron" id="chekid">
-        <label class="form-check-label" for="flexCheckDefault">
+        <input class="input" name="iron" type="checkbox" value="{{ironb.iron}}">
+        <label class="label">
             Ishsiz
         </label>
     </div>
+
     {{!-- /////////////////////////////////// --}}
     <input type="hidden" name="_csrf" value="{{csrf}}">
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="namem" placeholder="Mahlla nomi"
-                   >
+                <input type="text" class="form-control form-control-user" name="namem" placeholder="Mahlla nomi" value="{{ironb.namem}}"
+                    required>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="group" placeholder="Nogironlik guruhi"
-                    >
+                <input type="text" class="form-control form-control-user" name="group" placeholder="Nogironlik guruhi" value="{{ironb.group}}"
+                    required>
+            </div>
+        </div>
+        {{!-- <div class="col-lg-4">
+            <div class="form-group">
+                Rasm yuklash:
+                <input type="file" name="img" placeholder="Rasm url" value="/{{ironb.img}}" required>
+            </div>
+        </div> --}}
+        <div class="col-lg-4">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" name="adress" placeholder="Manzil" value="{{ironb.adress}}" required>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="img" placeholder="Rasm url" >
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="adress" placeholder="Manzil">
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="name" placeholder="IFO" required>
+                <input type="text" class="form-control form-control-user" name="name" placeholder="IFO" value="{{ironb.name}}" required>
             </div>
         </div>
         {{!-- <h7>Tug'ilgan sana:</h7> --}}
         <div class="col-lg-2">
             <div class="form-group">
-                <input type="date" class="form-control form-control-user" name="year" placeholder="Tug'ilgan sana"
-                    size="4">
+                <input type="date" class="form-control form-control-user" name="year" placeholder="Tug'ilgan sana" value="{{ironb.year}}"
+                    required size="4">
             </div>
         </div>
         {{!-- <h7>Oilada nechi kishi bor:</h7> --}}
         <div class="col-lg-2">
             <div class="form-group">
                 <input type="number" class="form-control form-control-user" name="count"
-                    placeholder="Oilada nechi kishi bor?" >
+                    placeholder="Oilada nechi kishi bor?" value="{{ironb.count}}" required>
             </div>
         </div>
 
         {{!-- <h7>Oilaviy ahvoli:</h7> --}}
         <div class="col-lg-2">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="mat" placeholder="Uylanganmi?" required>
+                <input type="text" class="form-control form-control-user" name="mat" placeholder="Uylanganmi?" value="{{ironb.mat}}" required>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
                 <input type="text" class="form-control form-control-user" name="work"
-                    placeholder="Ish joyi haqida ma'lumot" required>
+                    placeholder="Ish joyi haqida ma'lumot" value="{{ironb.work}}" required>
             </div>
         </div>
         {{!-- <h7>Farzandlar soni:</h7> --}}
         <div class="col-lg-2">
             <div class="form-group">
                 <input type="number" class="form-control form-control-user" name="counts" placeholder="Bolalar soni?"
-                    required>
+                value="{{ironb.counts}}"    required>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
                 <input type="text" class="form-control form-control-user" name="child"
-                    placeholder="Farzandlar haqida qisqacha ma'lumot" required>
+                    placeholder="Farzandlar haqida qisqacha ma'lumot" value="{{ironb.child}}" required>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
                 <input type="tel" class="form-control form-control-user" name="tel" placeholder="Telefon raqami"
-                    required>
+                value="{{ironb.tel}}" required>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
                 <input type="text" class="form-control form-control-user" name="marrid" placeholder="Ayoli ism shrifi"
-                    required>
+                    value="{{ironb.marrid}}"  required>
             </div>
         </div>
 
         <div class="col-lg-4">
             <div class="form-group">
                 <input type="text" class="form-control form-control-user" name="typema" placeholder="Oilaviy ahvili"
-                    required>
+                    value="{{ironb.typema}}" required>
             </div>
         </div>
         {{!-- <h7>Tug'ilgan sana:</h7> --}}
         <div class="col-lg-2">
             <div class="form-group">
                 <input type="date" class="form-control form-control-user" name="yearmar" placeholder="Tug'ilgan sana"
-                    required size="4">
+                value="{{ironb.yearmar}}"    required size="4">
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="father" placeholder="Otasi ism sharifi"
+                <input type="text" class="form-control form-control-user" name="father" placeholder="Otasi ism sharifi" value="{{ironb.father}}"
                     required>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="typef" placeholder="Oilaviy ahvili"
+                <input type="text" class="form-control form-control-user" name="typef" placeholder="Oilaviy ahvili" value="{{ironb.typef}}"
                     required>
             </div>
         </div>
         {{!-- <h7 class="">Tug'ilgan sana:</h7> --}}
         <div class="col-lg-2">
             <div class="form-group">
-                <input type="date" class="form-control form-control-user" name="yearfat" placeholder="Tug'ilgan sana"
+                <input type="date" class="form-control form-control-user" name="yearfat" placeholder="Tug'ilgan sana" value="{{ironb.yearfat}}"
                     required size="4">
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="mather" placeholder="Onasi ism sharifi"
+                <input type="text" class="form-control form-control-user" name="mather" placeholder="Onasi ism sharifi" value="{{ironb.mather}}"
                     required>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="form-group">
-                <input type="text" class="form-control form-control-user" name="typem" placeholder="Oilaviy ahvili"
+                <input type="text" class="form-control form-control-user" name="typem" placeholder="Oilaviy ahvili" value="{{ironb.typem}}"
                     required>
             </div>
         </div>
@@ -150,15 +152,30 @@
         <div class="col-lg-2">
             <div class="form-group">
                 <input type="date" class="form-control form-control-user" name="yearmat" placeholder="Tug'ilgan sana"
-                    required size="4">
+                    required size="4" value="{{ironb.yearmat}}">
             </div>
         </div>
 
         <div class="col-lg-12">
+            {{#if ironb.img}}
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="/{{ironb.img}}" alt="" width="200px">
+                    <input type="file" name="img">
+                </div>
+                <div class="col-lg-8">
+                    <div class="form-group">
+                        <textarea name="text" id="" class="form-control form-control-user" rows="10"
+                            placeholder="Kitob haqida ma`lumot">{{ironb.text}}</textarea>
+                    </div>
+                </div>
+            </div>
+            {{else}}
             <div class="form-group">
                 <textarea name="text" id="" class="form-control form-control-user" rows="10"
-                    placeholder="Oila haqida ma'lumot"></textarea>
+                    placeholder="Kitob haqida ma`lumot">{{ironb.text}}</textarea>
             </div>
+            {{/if}}
         </div>
 
     </div>

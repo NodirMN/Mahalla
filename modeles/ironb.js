@@ -2,7 +2,7 @@ const {Schema,model} = require('mongoose')
 
 const ironb = new Schema({
     img: String,
-    iron:String,
+    iron:Array,
     adress: String,
     year: String,
     name: {
@@ -22,7 +22,7 @@ const ironb = new Schema({
     work: String,
     counts: String,
     child: String,
-    gurup: String,
+    group: String,
     marrid: String,
     type: String,
     yearmar: String,

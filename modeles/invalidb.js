@@ -21,7 +21,7 @@ const invalidb = new Schema({
     work: String,
     counts: String,
     child: String,
-    gurup: String,
+    group: String,
     marrid: String,
     type: String,
     yearmar: String,
